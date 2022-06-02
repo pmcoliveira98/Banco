@@ -6,6 +6,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
+/*
+Autores
+Pedro 11677
+Leonardo 11830
+ */
 
 public class DBHelper extends SQLiteOpenHelper {
 
@@ -16,18 +21,19 @@ public class DBHelper extends SQLiteOpenHelper {
         super(context, name, null, version);
     }
 
-    @Override
+    @Override //criacao de base de dados
     public void onCreate(SQLiteDatabase db) {
         String str = "CREATE TABLE Utilizador(username TEXT PRIMARY KEY, password TEXT);";
         db.execSQL(str);
     }
 
-    @Override
+    @Override //upgrade de base de dados
     public void onUpgrade (SQLiteDatabase db, int oldVersion, int newVersion)  {
         db.execSQL("DROP TABLE IF EXISTS Utilizador;");
         onCreate(db);
     }
 
+    //validacao de tentativa de login
     public String ValidarLogin(String username, String password) {
         SQLiteDatabase db = getReadableDatabase();
         Cursor c = db.rawQuery("SELECT *FROM utilizador WHERE username=? AND password=?", new String[] {username, password} );

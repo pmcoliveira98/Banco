@@ -6,9 +6,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
+/*
+Autores
+Pedro 11677
+Leonardo 11830
+ */
 public class LoginActivity extends AppCompatActivity {
-
+//Botoes interface
     Button button0, button1, button2, button3, button4, button5, button6,
             button7, button8, button9, buttonAdicionar, buttonSubtrair,
             buttonPonto, buttonLimpar, buttonFinalizar;
@@ -22,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main); //layout da aplicacao
 
         button0 = (Button) findViewById(R.id.button0);
         button1 = (Button) findViewById(R.id.button1);
@@ -45,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
         TextView edt = (TextView) findViewById(R.id.edt);
         edt.setText("O seu saldo é " + saldo + "€");
 
-
+//ActionListeners para todos os botoes
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -116,6 +120,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 //________________________________________________________________________________________________//
+        // botao com funcao do deposito
         buttonAdicionar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -130,6 +135,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        // botao com funcao de levantamento
         buttonSubtrair.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -141,6 +147,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
 //________________________________________________________________________________________________//
+        // botao com funcao de finalizar operacao e mostrar o recibo
         buttonFinalizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -169,6 +176,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        // botao com funcao de limpar
         buttonLimpar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -176,6 +184,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        // botao com funcao de criar um ponto
         buttonPonto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
